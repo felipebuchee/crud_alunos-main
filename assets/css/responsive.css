@@ -1,0 +1,385 @@
+/* CSS Responsivo Avançado - Centralização Perfeita */
+
+/* Melhorias para dispositivos pequenos */
+@media (max-width: 576px) {
+    
+    /* Layout ainda mais compacto */
+    body {
+        padding: 10px 5px;
+    }
+    
+    .container {
+        padding: 20px 15px;
+        margin: 5px auto;
+        min-height: calc(100vh - 20px);
+        border-radius: 12px;
+    }
+    
+    /* Títulos responsivos */
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Botões responsivos */
+    .btn {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 8px;
+        padding: 14px 20px;
+        font-size: 13px;
+    }
+    
+    .btn-sm {
+        padding: 10px 16px;
+        font-size: 11px;
+    }
+    
+    /* Ações centralizadas em mobile */
+    .actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+    
+    /* Tabela ultra responsiva */
+    .table-container {
+        margin: 0 -15px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+    
+    table {
+        font-size: 11px;
+        min-width: 100%;
+    }
+    
+    th, td {
+        padding: 8px 4px;
+        text-align: center;
+        white-space: nowrap;
+    }
+    
+    .name-column,
+    .course-column {
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    /* Formulários em mobile */
+    .form-wrapper {
+        padding: 20px 15px;
+        margin: 0;
+        border-radius: 8px;
+    }
+    
+    .form-control {
+        font-size: 16px; /* Evita zoom no iOS */
+        padding: 14px 16px;
+    }
+    
+    .radio-group {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    /* Alertas responsivos */
+    .floating-alert {
+        right: 10px !important;
+        left: 10px !important;
+        top: 20px !important;
+        min-width: auto !important;
+        max-width: none !important;
+    }
+    
+    /* Theme toggle responsivo */
+    .theme-toggle {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        margin: 0 auto 15px;
+        display: flex !important;
+        width: fit-content;
+    }
+}
+
+/* Tablets em modo retrato */
+@media (min-width: 577px) and (max-width: 768px) {
+    
+    .container {
+        max-width: 95%;
+        padding: 35px 25px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .table-container {
+        border-radius: 12px;
+    }
+    
+    th, td {
+        padding: 12px 8px;
+    }
+    
+    .form-wrapper {
+        padding: 35px 25px;
+    }
+    
+    .form-control {
+        max-width: 450px;
+    }
+    
+    .btn {
+        min-width: 140px;
+        width: auto;
+    }
+}
+
+/* Tablets em modo paisagem e pequenos desktops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    
+    .container {
+        max-width: 90%;
+        padding: 40px 35px;
+    }
+    
+    .table-container {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+    
+    .form-container {
+        max-width: 600px;
+    }
+    
+    .btn {
+        min-width: 160px;
+    }
+}
+
+/* Desktops grandes */
+@media (min-width: 1400px) {
+    
+    .container {
+        max-width: 1400px;
+        padding: 50px 60px;
+    }
+    
+    h1 {
+        font-size: 3.2rem;
+        margin-bottom: 50px;
+    }
+    
+    .table-container {
+        border-radius: 20px;
+    }
+    
+    th {
+        padding: 20px 18px;
+        font-size: 14px;
+    }
+    
+    td {
+        padding: 18px 16px;
+        font-size: 15px;
+    }
+    
+    .form-wrapper {
+        padding: 50px 45px;
+        max-width: 550px;
+        margin: 0 auto;
+    }
+    
+    .btn {
+        padding: 16px 32px;
+        font-size: 15px;
+    }
+}
+
+/* Orientação landscape para mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    
+    body {
+        padding: 5px;
+    }
+    
+    .container {
+        padding: 15px;
+        margin: 2px auto;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    
+    .form-wrapper {
+        padding: 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .theme-toggle {
+        position: fixed !important;
+        top: 10px !important;
+        right: 10px !important;
+        padding: 6px 12px !important;
+        font-size: 11px !important;
+    }
+}
+
+/* Dark mode responsivo - REMOVIDO */
+
+/* Configurações para impressão */
+@media print {
+    
+    body {
+        background: white !important;
+        color: black !important;
+        padding: 0;
+    }
+    
+    .container {
+        background: white !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .theme-toggle,
+    .floating-alert,
+    .btn-danger,
+    .btn-warning {
+        display: none !important;
+    }
+    
+    .btn {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    table {
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        border: 1px solid #ccc !important;
+        background: white !important;
+        color: black !important;
+    }
+    
+    h1, h2, h3 {
+        color: black !important;
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+    }
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .container {
+        animation: none !important;
+    }
+    
+    .btn:hover {
+        transform: none !important;
+    }
+    
+    tr:hover {
+        transform: none !important;
+    }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+    
+    .container {
+        border: 2px solid #000;
+        box-shadow: none;
+    }
+    
+    .btn {
+        border: 2px solid #000 !important;
+        font-weight: bold;
+    }
+    
+    table {
+        border: 2px solid #000;
+    }
+    
+    th, td {
+        border: 1px solid #000 !important;
+    }
+    
+    .form-control {
+        border: 2px solid #000 !important;
+    }
+}
+
+/* Utilities para centralização perfeita */
+.text-center { text-align: center !important; }
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+.d-flex { display: flex !important; }
+.justify-content-center { justify-content: center !important; }
+.align-items-center { align-items: center !important; }
+.flex-column { flex-direction: column !important; }
+.gap-1 { gap: 0.25rem !important; }
+.gap-2 { gap: 0.5rem !important; }
+.gap-3 { gap: 1rem !important; }
+.w-100 { width: 100% !important; }
+.h-100 { height: 100% !important; }
+
+/* Scroll suave para toda a página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Melhorar foco para acessibilidade */
+*:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Transições suaves globais */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Loading skeleton para melhor UX */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
