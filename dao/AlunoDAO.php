@@ -23,6 +23,18 @@ class AlunoDAO{
         return $this->map($result);
     }
 
+    public function inserir(Aluno $aluno){
+        $sql = "INSERT INTO alunos (nome, idade, estrangeiro, id_curso) 
+                VALUES (:nome, :idade, :estrangeiro, :id_curso)";
+        $stm = $this->conexao->prepare($sql);
+        $stm->bindValue(':nome', $aluno->getNome());
+        $stm->bindValue(':idade', $aluno->getIdade());
+        $stm->bindValue(':estrangeiro', $aluno->getEstrangeiro());
+        $stm->bindValue(':id_curso', $aluno->getCurso()->getId());
+
+        return $stm->execute();
+    }
+
     private function map(array $result){
         $alunos = [];
         foreach($result as $r){
